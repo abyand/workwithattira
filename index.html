@@ -9,19 +9,39 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  body { margin: 0; background: #FBF1EB; }
+  body { margin: 0; background: #FBF1EB; overflow-x: hidden; }
   a { color: #7A3B45; text-decoration: none; }
   a:hover { text-decoration: underline; }
   html { scroll-behavior: smooth; }
+  img { max-width: 100%; }
+
+  @media (max-width: 780px) {
+    .header-bar { padding: 14px 5vw; justify-content: center; text-align: center; }
+    .nav-links { gap: 8px 18px; font-size: 12px; justify-content: center; }
+    #top { padding: 70px 6vw 56px; }
+    #about.about-grid { grid-template-columns: 1fr !important; gap: 36px; padding: 60px 6vw; text-align: center; }
+    #about .about-image { order: -1; }
+    #about > div:first-child { align-items: center; max-width: 100%; }
+    #about span { margin: 0 auto; }
+    #rates { padding: 60px 6vw; }
+    #rates > div:first-child { flex-direction: column; align-items: center !important; text-align: center; gap: 6px; }
+    #rates > div:nth-child(3) { text-align: center; }
+    #contact { padding: 60px 6vw 70px; }
+  }
+
+  @media (max-width: 480px) {
+    #rates [style*="grid-template-columns: 1fr 120px"] { grid-template-columns: 1fr !important; gap: 6px !important; }
+    #rates [style*="text-align: right"] { text-align: left !important; }
+  }
 </style>
 </head>
 <body>
 
 <div style="font-family: 'DM Sans', sans-serif; color: #4A2A2E; background: #FBF1EB;">
 
-  <div style="position: sticky; top: 0; z-index: 10; background: rgba(251,241,235,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid #EAD8D2; display: flex; align-items: center; justify-content: space-between; padding: 18px 6vw;">
+  <div class="header-bar" style="position: sticky; top: 0; z-index: 10; background: rgba(251,241,235,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid #EAD8D2; display: flex; align-items: center; justify-content: space-between; padding: 18px 6vw; flex-wrap: wrap; gap: 10px;">
     <a href="#top" style="font-family: 'Alex Brush', cursive; font-size: 28px; color: #7A3B45;">Attira Azzahra</a>
-    <div style="display: flex; gap: 28px; font-size: 13px; letter-spacing: 0.04em; color: #7A3B45;">
+    <div class="nav-links" style="display: flex; gap: 28px; font-size: 13px; letter-spacing: 0.04em; color: #7A3B45; flex-wrap: wrap;">
       <a href="#about">About</a>
       <a href="#stats">Stats</a>
       <a href="#brands">Brands</a>
@@ -37,7 +57,7 @@
     <a href="#rates" style="margin-top: 14px; background: #7A3B45; color: #F6E9E1; padding: 14px 34px; font-size: 14px; letter-spacing: 0.04em;">View rate card</a>
   </div>
 
-  <div id="about" style="background: linear-gradient(135deg, #7A3B45, #4A2A2E); color: #F6E9E1; padding: 90px 6vw; display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: center;">
+  <div id="about" class="about-grid" style="background: linear-gradient(135deg, #7A3B45, #4A2A2E); color: #F6E9E1; padding: 90px 6vw; display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: center;">
     <div style="display: flex; flex-direction: column; gap: 20px; max-width: 640px;">
       <div style="font-family: 'Alex Brush', cursive; font-size: 48px; color: #EFC9C0;">Hi, I'm Attira!</div>
       <div style="display: flex; flex-direction: column; gap: 14px;">
@@ -51,8 +71,8 @@
         <span style="font-size: 12px; padding: 7px 16px; border: 1px solid #C68F8A; border-radius: 100px; color: #EFC9C0;">1 yr in Singapore</span>
       </div>
     </div>
-    <div style="background: #FBF1EB; padding: 14px 14px 46px; transform: rotate(2deg); box-shadow: 0 18px 40px rgba(0,0,0,0.3); justify-self: center;">
-      <img src="assets/attira-portrait.jpg" alt="Attira Azzahra portrait" style="width: 260px; aspect-ratio: 4/5; object-fit: cover; display: block;">
+    <div class="about-image" style="background: #FBF1EB; padding: 14px 14px 46px; transform: rotate(2deg); box-shadow: 0 18px 40px rgba(0,0,0,0.3); justify-self: center;">
+      <img src="assets/attira-portrait.jpg" alt="Attira Azzahra portrait" style="width: 260px; max-width: 60vw; aspect-ratio: 4/5; object-fit: cover; display: block;">
     </div>
   </div>
 
